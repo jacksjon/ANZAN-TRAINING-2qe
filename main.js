@@ -13,7 +13,7 @@ function $(id) {
 function questionGenerate() {
   tim = 0;
   question1 = (Math.floor(Math.random() * 20) + -20);
-  question2 = (Math.floor(Math.random() * 5) + 0);
+  question2 = (Math.floor(Math.random() * 10) + -5);
   a = -(question1 + question2);
   b = question1 * question2;
   questions = 'x<sup>2</sup>';

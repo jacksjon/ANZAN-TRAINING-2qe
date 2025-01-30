@@ -13,7 +13,7 @@ function $(id) {
 function questionGenerate() {
   tim = 0;
   question1 = (Math.floor(Math.random() * 20) + -20);
-  question2 = (Math.floor(Math.random() * 10) + -5);
+  question2 = (Math.floor(Math.random() * 10) + -2);
   a = -(question1 + question2);
   b = question1 * question2;
   questions = 'x<sup>2</sup>';
@@ -29,11 +29,7 @@ function questionGenerate() {
    $('answer').value = ''; 
 }
 function answerCheck() {
-  if ((b === 0 && a > 0) && tim < 1) {
-    question1 = -question1;
-    question2 = -question2;
-  }
-  if ((($('answer').value) == ((question1 * -1) + ',' + (question2 * -1))) || ($('answer').value) == ((question2 * -1) + ',' + (question1 * -1))) {
+  if ((($('answer').value) == ((question1) + ',' + (question2))) || ($('answer').value) == ((question2) + ',' + (question1))) {
     $('answer-display').innerHTML = '正解！';
     $('answer-display').style.color = 'red';
     console.log('正解');
@@ -53,11 +49,7 @@ function answerCheck() {
   }
 }
 function answerDisplay() {
-  if ((b === 0 && a > 0) && tim < 1) {
-  question1 = -question1;
-  question2 = -question2;
-  }
-  $('answer-display').innerHTML = '答えは' + ((question1 * -1) + ',' + (question2 * -1));
+  $('answer-display').innerHTML = '答えは' + ((question1) + ',' + (question2));
   $('answer-display').style.color = 'orange';
   if (tim < 1) {
     answerseetime = answerseetime + 1;
